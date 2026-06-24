@@ -1,0 +1,1004 @@
+2026-06-22 11:47:33,133 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 11:47:33,150 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 11:47:33,352 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 11:47:33,353 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 11:47:33,353 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 11:48:00,010 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 11:48:00,033 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 11:48:00,141 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 11:48:00,142 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 11:48:00,142 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 13:07:24,546 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 13:07:24,560 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 13:07:24,752 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 13:07:24,752 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 13:07:24,753 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 13:08:39,241 [6] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: priya@gmail.com
+2026-06-22 13:08:41,073 [6] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (179ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:08:41,159 [6] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (38ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[Email] = @__dto_Email_0
+2026-06-22 13:08:41,160 [6] WARN  CrimeManagementSystem.Services.AuthService - Login attempt for non-existent email: priya@gmail.com
+2026-06-22 13:08:41,161 [6] WARN  CrimeManagementSystem.Controllers.AuthController - Login failed for priya@gmail.com: Invalid email or password!
+2026-06-22 13:13:56,817 [7] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: priya.sharma@gmail.com
+2026-06-22 13:13:56,899 [7] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:13:57,759 [4] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 13:13:57,805 [4] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 4
+2026-06-22 13:13:57,910 [4] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: priya.sharma@gmail.com
+2026-06-22 13:14:15,208 [7] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: arun.raj@gmail.com
+2026-06-22 13:14:15,314 [7] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:14:15,659 [4] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 13:14:15,660 [4] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 5
+2026-06-22 13:14:15,661 [4] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: arun.raj@gmail.com
+2026-06-22 13:16:09,699 [7] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: nagashri@gmail.com
+2026-06-22 13:16:09,706 [7] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:16:09,928 [7] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 13:16:09,929 [7] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 6
+2026-06-22 13:16:09,931 [7] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: nagashri@gmail.com
+2026-06-22 13:16:21,664 [7] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: iswariya@gmail.com
+2026-06-22 13:16:21,672 [7] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:16:21,864 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 13:16:21,865 [9] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 7
+2026-06-22 13:16:21,865 [9] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: iswariya@gmail.com
+2026-06-22 13:16:29,640 [6] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: nasiya@gmail.com
+2026-06-22 13:16:29,647 [6] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:16:29,860 [6] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 13:16:29,861 [6] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 8
+2026-06-22 13:16:29,862 [6] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: nasiya@gmail.com
+2026-06-22 13:17:00,217 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:17:00,230 [9] WARN  CrimeManagementSystem.Controllers.AuthController - Station Head register failed: Email already registered!
+2026-06-22 13:20:04,014 [27] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:20:04,017 [27] WARN  CrimeManagementSystem.Controllers.AuthController - Station Head register failed: Email already registered!
+2026-06-22 13:20:44,321 [26] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: stationhead@cms.com
+2026-06-22 13:20:44,331 [26] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:20:44,464 [26] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: stationhead@cms.com
+2026-06-22 13:39:47,071 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 13:39:47,083 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 13:39:51,183 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 13:39:51,209 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 13:39:52,218 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 13:39:52,220 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 13:39:52,221 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 13:40:36,325 [17] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: haripriya@gmail.com
+2026-06-22 13:40:38,944 [10] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (224ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:40:39,960 [10] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (59ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 13:40:40,021 [10] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 9
+2026-06-22 13:40:40,070 [10] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: haripriya@gmail.com
+2026-06-22 13:41:06,297 [17] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: haripriya@gmail.com
+2026-06-22 13:41:06,361 [17] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:41:06,837 [17] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: haripriya@gmail.com
+2026-06-22 13:42:08,591 [13] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Incidents] AS [i]
+2026-06-22 13:42:08,719 [13] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (37ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Incidents] ([AssignedOfficerId], [Description], [EstimatedValue], [GraffitiImagePath], [IncidentCode], [IncidentDate], [Location], [PropertyDescription], [ReportedAt], [ReportedByUserId], [Status], [SuspectDescription], [Type])
+OUTPUT INSERTED.[IncidentId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2026-06-22 13:42:08,730 [13] INFO  CrimeManagementSystem.Services.IncidentService - Incident created: INC-2026-001 by UserId 9
+2026-06-22 13:42:08,924 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (55ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 13:43:30,005 [13] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: stationheadtnagar@cms.com
+2026-06-22 13:43:30,022 [13] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (14ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:43:30,273 [21] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 13:43:30,274 [21] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 10
+2026-06-22 13:43:30,275 [21] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: stationheadtnagar@cms.com
+2026-06-22 13:43:48,535 [13] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: stationheadtnagar@cms.com
+2026-06-22 13:43:48,571 [23] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (33ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:43:48,811 [23] WARN  CrimeManagementSystem.Services.AuthService - Failed login attempt (wrong password) for stationheadtnagar@cms.com
+2026-06-22 13:43:49,084 [23] WARN  CrimeManagementSystem.Controllers.AuthController - Login failed for stationheadtnagar@cms.com: Invalid email or password!
+2026-06-22 13:44:03,907 [23] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: stationheadtnagar@cms.com
+2026-06-22 13:44:03,927 [13] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:44:04,168 [13] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: stationheadtnagar@cms.com
+2026-06-22 13:48:13,718 [21] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: stationheadtnagar@cms.com
+2026-06-22 13:48:13,743 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (16ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:48:13,995 [9] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: stationheadtnagar@cms.com
+2026-06-22 13:49:43,318 [3] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: sureshofficer@cms.com
+2026-06-22 13:49:43,335 [17] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (14ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:49:43,578 [17] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 13:49:43,579 [17] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 11
+2026-06-22 13:49:43,579 [17] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: sureshofficer@cms.com
+2026-06-22 13:50:42,036 [3] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: sureshofficer@cms.com
+2026-06-22 13:50:42,052 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (14ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 13:50:42,294 [3] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: sureshofficer@cms.com
+2026-06-22 13:52:20,612 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (16ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 14:16:52,089 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 14:16:52,099 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 14:16:52,286 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 14:16:52,287 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 14:16:52,287 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 14:17:40,663 [15] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: stationheadtnagar@cms.com
+2026-06-22 14:17:42,554 [15] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (183ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 14:17:43,277 [15] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: stationheadtnagar@cms.com
+2026-06-22 14:28:47,179 [21] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: arjun.stationhead@cms.com
+2026-06-22 14:28:47,329 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 14:28:48,116 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (36ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 14:28:48,164 [3] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 12
+2026-06-22 14:28:48,171 [3] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: arjun.stationhead@cms.com
+2026-06-22 14:29:40,394 [3] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: arjun.stationhead@cms.com
+2026-06-22 14:29:40,510 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 14:29:40,760 [3] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: arjun.stationhead@cms.com
+2026-06-22 14:38:24,294 [7] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 14:38:24,592 [7] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (29ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 14:38:24,594 [7] INFO  CrimeManagementSystem.Services.AuthService - Station Head created with ID: 13
+2026-06-22 14:38:24,597 [7] INFO  CrimeManagementSystem.Controllers.AuthController - Station Head registered: arjunstationhead@cms.com
+2026-06-22 14:39:37,350 [3] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: arjunstationhead@cms.com
+2026-06-22 14:39:37,402 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (48ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 14:39:37,626 [3] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: arjunstationhead@cms.com
+2026-06-22 14:40:07,388 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (13ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[Email] = @__dto_Email_0
+2026-06-22 14:40:07,399 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__dto_BadgeNumber_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[BadgeNumber] = @__dto_BadgeNumber_0
+2026-06-22 14:40:07,726 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 450), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Officers] ([Address], [BadgeNumber], [CreatedAt], [Email], [IsActive], [Name], [PasswordHash], [Phone])
+OUTPUT INSERTED.[OfficerId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-06-22 14:40:07,731 [3] INFO  CrimeManagementSystem.Services.OfficerService - New officer added: 1 - KC-001
+2026-06-22 14:40:36,348 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (40ms) [Parameters=[@__officerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[AssignedOfficerId] = @__officerId_0
+2026-06-22 14:41:00,125 [16] ERROR CrimeManagementSystem.Middleware.ExceptionMiddleware - Unhandled exception occurred: Unable to resolve service for type 'CrimeManagementSystem.Interfaces.IPdfService' while attempting to activate 'CrimeManagementSystem.Controllers.IncidentController'.
+System.InvalidOperationException: Unable to resolve service for type 'CrimeManagementSystem.Interfaces.IPdfService' while attempting to activate 'CrimeManagementSystem.Controllers.IncidentController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method307(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at CrimeManagementSystem.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Middleware\ExceptionMiddleware.cs:line 22
+2026-06-22 14:41:04,000 [16] ERROR CrimeManagementSystem.Middleware.ExceptionMiddleware - Unhandled exception occurred: Unable to resolve service for type 'CrimeManagementSystem.Interfaces.IPdfService' while attempting to activate 'CrimeManagementSystem.Controllers.IncidentController'.
+System.InvalidOperationException: Unable to resolve service for type 'CrimeManagementSystem.Interfaces.IPdfService' while attempting to activate 'CrimeManagementSystem.Controllers.IncidentController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method307(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at CrimeManagementSystem.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Middleware\ExceptionMiddleware.cs:line 22
+2026-06-22 14:46:11,891 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 14:46:11,901 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 14:46:11,981 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 14:46:11,982 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 14:46:11,982 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 14:49:25,203 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 14:49:25,212 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 14:49:25,287 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 14:49:25,288 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 14:49:25,288 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 14:49:39,735 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 14:49:39,747 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 14:49:39,808 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 14:49:39,809 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 14:49:39,809 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 14:51:06,544 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 14:51:06,555 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 14:51:06,646 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 14:51:06,647 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 14:51:06,647 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 14:51:24,687 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 14:51:24,695 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 14:51:24,749 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 14:51:24,750 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 14:51:24,750 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 14:55:37,640 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 14:55:37,650 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 14:55:37,720 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 14:55:37,721 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 14:55:37,722 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 14:57:57,168 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 14:57:57,182 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 14:57:57,270 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 14:57:57,271 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 14:57:57,271 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:01:01,701 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:01:01,711 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:01:01,768 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:01:01,769 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:01:01,769 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:04:49,088 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:04:49,098 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:04:49,157 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:04:49,158 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:04:49,158 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:05:04,019 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:05:04,028 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:05:04,086 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:05:04,087 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:05:04,087 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:06:38,642 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:06:38,658 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:06:38,781 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:06:38,784 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:06:38,787 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:11:53,370 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:11:53,378 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:11:53,432 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:11:53,433 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:11:53,433 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:16:09,095 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:16:09,104 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:16:09,296 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:16:09,297 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:16:09,297 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:20:24,680 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:20:24,694 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:20:24,794 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:20:24,795 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:20:24,796 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:22:09,593 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:22:09,602 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:22:09,667 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:22:09,667 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:22:09,668 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:22:30,036 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:22:30,047 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:22:30,117 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:22:30,118 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:22:30,118 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:22:40,831 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:22:40,841 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:22:40,917 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:22:40,918 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:22:40,918 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:23:00,632 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:23:00,642 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:23:00,716 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:23:00,716 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:23:00,717 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:40:34,714 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 15:40:34,726 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 15:40:34,808 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 15:40:34,808 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 15:40:34,809 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 15:41:06,729 [4] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: mohanashri.user@gmail.com
+2026-06-22 15:41:08,565 [4] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 15:41:09,453 [4] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (53ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 15:41:09,504 [4] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 14
+2026-06-22 15:41:12,854 [4] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to mohanashri.user@gmail.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-84564e74651sm6970192b3a.34 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-84564e74651sm6970192b3a.34 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-84564e74651sm6970192b3a.34 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 15:41:12,913 [4] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: mohanashri.user@gmail.com
+2026-06-22 15:41:49,309 [3] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: mohanashri.user@gmail.com
+2026-06-22 15:41:49,392 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (41ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 15:41:52,260 [3] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to mohanashri.user@gmail.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-84564e7687csm7347573b3a.35 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-84564e7687csm7347573b3a.35 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-84564e7687csm7347573b3a.35 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 15:41:52,262 [3] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: mohanashri.user@gmail.com
+2026-06-22 15:44:49,452 [25] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Incidents] AS [i]
+2026-06-22 15:44:49,590 [25] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (31ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Incidents] ([AssignedOfficerId], [Description], [EstimatedValue], [GraffitiImagePath], [IncidentCode], [IncidentDate], [Location], [PropertyDescription], [ReportedAt], [ReportedByUserId], [Status], [SuspectDescription], [Type])
+OUTPUT INSERTED.[IncidentId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2026-06-22 15:44:49,597 [25] INFO  CrimeManagementSystem.Services.IncidentService - Incident created: INC-2026-002 by UserId 14
+2026-06-22 15:44:49,722 [25] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 15:45:22,977 [26] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Incidents] AS [i]
+2026-06-22 15:45:22,989 [26] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Incidents] ([AssignedOfficerId], [Description], [EstimatedValue], [GraffitiImagePath], [IncidentCode], [IncidentDate], [Location], [PropertyDescription], [ReportedAt], [ReportedByUserId], [Status], [SuspectDescription], [Type])
+OUTPUT INSERTED.[IncidentId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2026-06-22 15:45:22,990 [26] INFO  CrimeManagementSystem.Services.IncidentService - Incident created: INC-2026-003 by UserId 14
+2026-06-22 15:45:23,000 [26] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 15:49:12,415 [15] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (11ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 15:49:12,662 [15] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 15:49:12,663 [15] INFO  CrimeManagementSystem.Services.AuthService - Station Head created with ID: 15
+2026-06-22 15:49:12,663 [15] INFO  CrimeManagementSystem.Controllers.AuthController - Station Head registered: stationheadkarthik@cms.com
+2026-06-22 15:49:42,295 [15] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: stationheadkarthik@cms.com
+2026-06-22 15:49:42,313 [37] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (16ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 15:49:44,872 [15] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to stationheadkarthik@cms.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c743bfe8aasm70286665ad.68 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c743bfe8aasm70286665ad.68 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c743bfe8aasm70286665ad.68 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 15:49:44,873 [15] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: stationheadkarthik@cms.com
+2026-06-22 15:51:55,049 [40] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[Email] = @__dto_Email_0
+2026-06-22 15:51:55,063 [40] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@__dto_BadgeNumber_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[BadgeNumber] = @__dto_BadgeNumber_0
+2026-06-22 15:51:55,343 [40] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 450), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Officers] ([Address], [BadgeNumber], [CreatedAt], [Email], [IsActive], [Name], [PasswordHash], [Phone])
+OUTPUT INSERTED.[OfficerId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-06-22 15:51:55,347 [40] INFO  CrimeManagementSystem.Services.OfficerService - New officer added: 2 - TN-001
+2026-06-22 15:53:31,404 [40] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: officersureshkumar@gmail.com
+2026-06-22 15:53:31,419 [40] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 15:53:31,425 [40] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[Email] = @__dto_Email_0
+2026-06-22 15:53:31,658 [40] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: officersureshkumar@gmail.com
+2026-06-22 15:54:17,057 [30] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (25ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 15:54:25,772 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (38ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 15:57:16,881 [33] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: mohanashri.user@gmail.com
+2026-06-22 15:57:16,915 [33] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (31ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 15:57:19,338 [33] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to mohanashri.user@gmail.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-84564e9e0d5sm7011304b3a.40 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-84564e9e0d5sm7011304b3a.40 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-84564e9e0d5sm7011304b3a.40 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 15:57:19,343 [33] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: mohanashri.user@gmail.com
+2026-06-22 15:57:52,141 [29] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (14ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 16:05:10,796 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 16:05:10,809 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 16:05:10,906 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 16:05:10,906 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 16:05:10,907 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 16:23:35,640 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 16:23:35,652 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 16:23:35,745 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 16:23:35,747 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 16:23:35,747 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 16:26:52,580 [19] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: jananijagannathan11@gmail.com
+2026-06-22 16:26:55,643 [19] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (224ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 16:26:56,542 [19] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (52ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 16:26:56,581 [19] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 16
+2026-06-22 16:26:59,722 [19] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to jananijagannathan11@gmail.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-37d15df8b8esm9548263a91.16 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-37d15df8b8esm9548263a91.16 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-37d15df8b8esm9548263a91.16 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 16:26:59,802 [19] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: jananijagannathan11@gmail.com
+2026-06-22 16:28:22,995 [13] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: jananijagannathan11@gmail.com
+2026-06-22 16:28:23,063 [13] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 16:28:27,425 [6] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to jananijagannathan11@gmail.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c8bc2c8f0a7sm7098511a12.7 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c8bc2c8f0a7sm7098511a12.7 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c8bc2c8f0a7sm7098511a12.7 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 16:28:27,429 [6] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: jananijagannathan11@gmail.com
+2026-06-22 17:04:21,718 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 17:04:21,730 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 17:04:21,795 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 17:04:21,796 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 17:04:21,796 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 20:15:57,417 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 20:15:57,433 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 20:15:57,721 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 20:15:57,722 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 20:15:57,722 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 20:24:17,186 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 20:24:17,254 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 20:24:18,027 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 20:24:18,030 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 20:24:18,037 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 20:24:19,656 [11] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: jananijagannathan11@gmail.com
+2026-06-22 20:24:22,340 [15] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (110ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 20:24:22,526 [15] WARN  CrimeManagementSystem.Services.AuthService - Duplicate registration attempt: jananijagannathan11@gmail.com
+2026-06-22 20:24:22,695 [15] WARN  CrimeManagementSystem.Controllers.AuthController - Register failed for jananijagannathan11@gmail.com: Email already registered!
+2026-06-22 20:24:47,979 [18] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: jananijagannathan11@gmail.com
+2026-06-22 20:24:48,027 [15] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 20:24:48,029 [15] WARN  CrimeManagementSystem.Services.AuthService - Duplicate registration attempt: jananijagannathan11@gmail.com
+2026-06-22 20:24:48,081 [15] WARN  CrimeManagementSystem.Controllers.AuthController - Register failed for jananijagannathan11@gmail.com: Email already registered!
+2026-06-22 20:25:16,851 [15] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: jananijagannathan11@gmail.com
+2026-06-22 20:25:16,962 [18] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 20:25:17,473 [18] WARN  CrimeManagementSystem.Services.AuthService - Failed login attempt (wrong password) for jananijagannathan11@gmail.com
+2026-06-22 20:25:17,519 [18] WARN  CrimeManagementSystem.Controllers.AuthController - Login failed for jananijagannathan11@gmail.com: Invalid email or password!
+2026-06-22 20:26:55,833 [18] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: jsjanani11051@gmail.com
+2026-06-22 20:26:55,850 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (13ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 20:26:56,361 [3] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (35ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 20:26:56,417 [3] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 17
+2026-06-22 20:26:59,766 [3] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to jsjanani11051@gmail.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-37d4f2d2919sm7126963a91.9 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-37d4f2d2919sm7126963a91.9 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-37d4f2d2919sm7126963a91.9 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 20:26:59,879 [3] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: jsjanani11051@gmail.com
+2026-06-22 20:27:21,608 [21] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: jsjanani11051@gmail.com
+2026-06-22 20:27:21,641 [15] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (29ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 20:27:24,558 [21] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to jsjanani11051@gmail.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c7439f8cfbsm79295825ad.45 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c7439f8cfbsm79295825ad.45 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c7439f8cfbsm79295825ad.45 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 20:27:24,560 [21] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: jsjanani11051@gmail.com
+2026-06-22 21:16:12,367 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 21:16:12,503 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 21:16:12,783 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 21:16:12,786 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 21:16:12,787 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 21:28:12,167 [4] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: aravind.krishnan@gmail.com
+2026-06-22 21:28:13,737 [4] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (102ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 21:28:14,485 [4] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (20ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 21:28:14,521 [4] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 18
+2026-06-22 21:28:17,110 [4] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to aravind.krishnan@gmail.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-37d4ed88dbdsm7270364a91.0 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-37d4ed88dbdsm7270364a91.0 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-37d4ed88dbdsm7270364a91.0 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 21:28:17,184 [4] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: aravind.krishnan@gmail.com
+2026-06-22 21:29:01,218 [4] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: aravind.krishnan@gmail.com
+2026-06-22 21:29:01,271 [4] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (13ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 21:29:03,911 [15] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to aravind.krishnan@gmail.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c7436afd00sm79944585ad.15 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c7436afd00sm79944585ad.15 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c7436afd00sm79944585ad.15 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 21:29:03,913 [15] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: aravind.krishnan@gmail.com
+2026-06-22 21:29:34,015 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2026-06-22 21:30:51,892 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2026-06-22 21:30:51,908 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [Name] = @p0, [Phone] = @p1
+OUTPUT 1
+WHERE [UserId] = @p2;
+2026-06-22 21:30:51,910 [9] INFO  CrimeManagementSystem.Services.AuthService - User profile updated: 18
+2026-06-22 21:33:03,742 [18] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Incidents] AS [i]
+2026-06-22 21:33:03,825 [18] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Incidents] ([AssignedOfficerId], [Description], [EstimatedValue], [GraffitiImagePath], [IncidentCode], [IncidentDate], [Location], [PropertyDescription], [ReportedAt], [ReportedByUserId], [Status], [SuspectDescription], [Type])
+OUTPUT INSERTED.[IncidentId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2026-06-22 21:33:03,831 [18] INFO  CrimeManagementSystem.Services.IncidentService - Incident created: INC-2026-004 by UserId 18
+2026-06-22 21:33:03,914 [18] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 21:35:07,669 [18] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (20ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[ReportedByUserId] = @__userId_0
+2026-06-22 21:35:49,854 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 21:37:48,308 [31] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 21:37:48,556 [31] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 21:37:48,557 [31] INFO  CrimeManagementSystem.Services.AuthService - Station Head created with ID: 19
+2026-06-22 21:37:48,558 [31] INFO  CrimeManagementSystem.Controllers.AuthController - Station Head registered: lakshmi.stationhead@cms.com
+2026-06-22 21:38:10,847 [31] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: lakshmi.stationhead@cms.com
+2026-06-22 21:38:10,880 [31] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (30ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 21:38:13,646 [31] ERROR CrimeManagementSystem.Services.EmailService - Failed to send email to lakshmi.stationhead@cms.com: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c8bc5a1dd9csm7202775a12.22 - gsmtp
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c8bc5a1dd9csm7202775a12.22 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c8bc5a1dd9csm7202775a12.22 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at CrimeManagementSystem.Services.EmailService.SendEmailAsync(String toEmail, String subject, String body) in C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem\Services\EmailService.cs:line 43
+2026-06-22 21:38:13,648 [31] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: lakshmi.stationhead@cms.com
+2026-06-22 21:38:41,335 [34] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+2026-06-22 21:39:41,615 [28] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@__dto_IncidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type]
+FROM [Incidents] AS [i]
+WHERE [i].[IncidentId] = @__dto_IncidentId_0
+2026-06-22 21:39:41,629 [28] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__dto_OfficerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[OfficerId] = @__dto_OfficerId_0
+2026-06-22 21:39:41,669 [28] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Incidents] SET [AssignedOfficerId] = @p0, [Status] = @p1
+OUTPUT 1
+WHERE [IncidentId] = @p2;
+2026-06-22 21:39:41,670 [28] INFO  CrimeManagementSystem.Services.IncidentService - Incident 1 assigned to Officer 1
+2026-06-22 21:39:41,677 [28] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 21:40:03,182 [28] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[@__dto_IncidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type]
+FROM [Incidents] AS [i]
+WHERE [i].[IncidentId] = @__dto_IncidentId_0
+2026-06-22 21:40:03,206 [28] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (11ms) [Parameters=[@__dto_OfficerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[OfficerId] = @__dto_OfficerId_0
+2026-06-22 21:40:03,214 [28] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Incidents] SET [AssignedOfficerId] = @p0, [Status] = @p1
+OUTPUT 1
+WHERE [IncidentId] = @p2;
+2026-06-22 21:40:03,215 [28] INFO  CrimeManagementSystem.Services.IncidentService - Incident 2 assigned to Officer 2
+2026-06-22 21:40:03,225 [28] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 21:40:33,441 [37] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (30ms) [Parameters=[@__dto_IncidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type]
+FROM [Incidents] AS [i]
+WHERE [i].[IncidentId] = @__dto_IncidentId_0
+2026-06-22 21:40:33,448 [37] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__dto_OfficerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[OfficerId] = @__dto_OfficerId_0
+2026-06-22 21:40:33,449 [37] WARN  CrimeManagementSystem.Services.IncidentService - Assign failed - Officer not found: 3
+2026-06-22 21:40:49,947 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__dto_IncidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type]
+FROM [Incidents] AS [i]
+WHERE [i].[IncidentId] = @__dto_IncidentId_0
+2026-06-22 21:40:49,949 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__dto_OfficerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[OfficerId] = @__dto_OfficerId_0
+2026-06-22 21:40:49,950 [9] WARN  CrimeManagementSystem.Services.IncidentService - Assign failed - Officer not found: 4
+2026-06-22 21:41:02,042 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__dto_IncidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type]
+FROM [Incidents] AS [i]
+WHERE [i].[IncidentId] = @__dto_IncidentId_0
+2026-06-22 21:41:02,044 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__dto_OfficerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[OfficerId] = @__dto_OfficerId_0
+2026-06-22 21:41:02,083 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (37ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Incidents] SET [AssignedOfficerId] = @p0, [Status] = @p1
+OUTPUT 1
+WHERE [IncidentId] = @p2;
+2026-06-22 21:41:02,083 [9] INFO  CrimeManagementSystem.Services.IncidentService - Incident 4 assigned to Officer 2
+2026-06-22 21:41:02,090 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 21:42:05,397 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[Email] = @__dto_Email_0
+2026-06-22 21:42:05,407 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__dto_BadgeNumber_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[BadgeNumber] = @__dto_BadgeNumber_0
+2026-06-22 21:42:05,630 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 450), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Officers] ([Address], [BadgeNumber], [CreatedAt], [Email], [IsActive], [Name], [PasswordHash], [Phone])
+OUTPUT INSERTED.[OfficerId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-06-22 21:42:05,633 [9] INFO  CrimeManagementSystem.Services.OfficerService - New officer added: 3 - TN-777
+2026-06-22 21:42:26,837 [35] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (32ms) [Parameters=[@__dto_IncidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type]
+FROM [Incidents] AS [i]
+WHERE [i].[IncidentId] = @__dto_IncidentId_0
+2026-06-22 21:42:26,841 [35] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__dto_OfficerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[OfficerId] = @__dto_OfficerId_0
+2026-06-22 21:42:26,852 [35] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Incidents] SET [AssignedOfficerId] = @p0
+OUTPUT 1
+WHERE [IncidentId] = @p1;
+2026-06-22 21:42:26,853 [35] INFO  CrimeManagementSystem.Services.IncidentService - Incident 4 assigned to Officer 3
+2026-06-22 21:42:26,860 [35] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 21:43:21,759 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (24ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type]
+FROM [Incidents] AS [i]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 21:43:21,760 [9] WARN  CrimeManagementSystem.Services.IncidentService - Verify failed - Incident 1 not closed yet
+2026-06-22 21:43:32,533 [35] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type]
+FROM [Incidents] AS [i]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 21:43:32,534 [35] WARN  CrimeManagementSystem.Services.IncidentService - Verify failed - Incident 2 not closed yet
+2026-06-22 21:44:17,808 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__incidentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[IncidentId] = @__incidentId_0
+2026-06-22 21:45:14,043 [10] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: vignesh.officer@cms.com
+2026-06-22 21:45:14,078 [10] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (34ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 21:45:14,084 [10] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[Email] = @__dto_Email_0
+2026-06-22 21:45:14,294 [10] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: vignesh.officer@cms.com
+2026-06-22 21:47:20,719 [10] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (16ms) [Parameters=[@__officerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[IncidentId], [i].[AssignedOfficerId], [i].[Description], [i].[EstimatedValue], [i].[GraffitiImagePath], [i].[IncidentCode], [i].[IncidentDate], [i].[Location], [i].[PropertyDescription], [i].[ReportedAt], [i].[ReportedByUserId], [i].[Status], [i].[SuspectDescription], [i].[Type], [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role], [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Incidents] AS [i]
+INNER JOIN [Users] AS [u] ON [i].[ReportedByUserId] = [u].[UserId]
+LEFT JOIN [Officers] AS [o] ON [i].[AssignedOfficerId] = [o].[OfficerId]
+WHERE [i].[AssignedOfficerId] = @__officerId_0
+2026-06-22 21:59:30,963 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7025
+2026-06-22 21:59:30,978 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5158
+2026-06-22 21:59:31,085 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2026-06-22 21:59:31,086 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2026-06-22 21:59:31,086 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\priya\source\repos\CrimeManagementSystem\CrimeManagementSystem
+2026-06-22 22:02:47,110 [9] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: jananijagannathan11@gmail.com
+2026-06-22 22:02:48,728 [9] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (122ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 22:02:48,837 [9] WARN  CrimeManagementSystem.Services.AuthService - Duplicate registration attempt: jananijagannathan11@gmail.com
+2026-06-22 22:02:48,838 [9] WARN  CrimeManagementSystem.Controllers.AuthController - Register failed for jananijagannathan11@gmail.com: Email already registered!
+2026-06-22 22:04:15,709 [14] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: jananijagannathan11test1@gmail.com
+2026-06-22 22:04:15,748 [14] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 22:04:16,373 [14] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (56ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AadhaarNumber], [Address], [CreatedAt], [DateOfBirth], [Email], [Name], [PANNumber], [PasswordHash], [Phone], [ProfilePicture], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-06-22 22:04:16,404 [14] INFO  CrimeManagementSystem.Services.AuthService - New user created with ID: 20
+2026-06-22 22:04:19,670 [22] INFO  CrimeManagementSystem.Services.EmailService - Email sent successfully to jananijagannathan11test1@gmail.com
+2026-06-22 22:04:19,715 [22] INFO  CrimeManagementSystem.Controllers.AuthController - User registered successfully: jananijagannathan11test1@gmail.com
+2026-06-22 22:06:56,577 [14] INFO  CrimeManagementSystem.Controllers.AuthController - Register attempt for email: jsjanani11051@gmail.com
+2026-06-22 22:06:56,677 [14] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 22:06:56,678 [14] WARN  CrimeManagementSystem.Services.AuthService - Duplicate registration attempt: jsjanani11051@gmail.com
+2026-06-22 22:06:56,679 [14] WARN  CrimeManagementSystem.Controllers.AuthController - Register failed for jsjanani11051@gmail.com: Email already registered!
+2026-06-22 22:08:35,919 [14] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: jananijagannathan11+test1@gmail.com
+2026-06-22 22:08:35,942 [14] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 22:08:35,966 [14] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[Email] = @__dto_Email_0
+2026-06-22 22:08:35,967 [14] WARN  CrimeManagementSystem.Services.AuthService - Login attempt for non-existent email: jananijagannathan11+test1@gmail.com
+2026-06-22 22:08:35,968 [14] WARN  CrimeManagementSystem.Controllers.AuthController - Login failed for jananijagannathan11+test1@gmail.com: Invalid email or password!
+2026-06-22 22:09:10,732 [27] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: jananijagannathan11+test1@gmail.com
+2026-06-22 22:09:10,763 [27] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (28ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 22:09:10,770 [27] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [o].[OfficerId], [o].[Address], [o].[BadgeNumber], [o].[CreatedAt], [o].[Email], [o].[IsActive], [o].[Name], [o].[PasswordHash], [o].[Phone]
+FROM [Officers] AS [o]
+WHERE [o].[Email] = @__dto_Email_0
+2026-06-22 22:09:10,770 [27] WARN  CrimeManagementSystem.Services.AuthService - Login attempt for non-existent email: jananijagannathan11+test1@gmail.com
+2026-06-22 22:09:10,771 [27] WARN  CrimeManagementSystem.Controllers.AuthController - Login failed for jananijagannathan11+test1@gmail.com: Invalid email or password!
+2026-06-22 22:10:40,370 [14] INFO  CrimeManagementSystem.Controllers.AuthController - Login attempt for email: aravind.krishnan@gmail.com
+2026-06-22 22:10:40,394 [14] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[@__dto_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[Address], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[Name], [u].[PANNumber], [u].[PasswordHash], [u].[Phone], [u].[ProfilePicture], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-22 22:10:44,332 [14] INFO  CrimeManagementSystem.Services.EmailService - Email sent successfully to aravind.krishnan@gmail.com
+2026-06-22 22:10:44,333 [14] INFO  CrimeManagementSystem.Controllers.AuthController - Login successful for: aravind.krishnan@gmail.com
