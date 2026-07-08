@@ -1,0 +1,64 @@
+name: Crime Management System CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: Build & Test Backend
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Get the code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Setup .NET 8
+    - name: Setup .NET 8.0
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x
+
+    # Step 3: Restore NuGet packages
+    - name: Restore dependencies
+      run: dotnet restore CrimeManagementSystem.sln
+
+    # Step 4: Build the solution
+    - name: Build solution
+      run: dotnet build CrimeManagementSystem.sln --no-restore --configuration Release
+
+    # Step 5: Run all unit tests
+    - name: Run unit tests
+      run: dotnet test CrimeManagementSystem.Tests/CrimeManagementSystem.Tests.csproj --no-build --configuration Release --verbosity normal
+
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Get the code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Setup Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: CrimeManagementSystem_frontend/package-lock.json
+
+    # Step 3: Install dependencies
+    - name: Install frontend dependencies
+      run: |
+        cd CrimeManagementSystem_frontend
+        npm install
+
+    # Step 4: Build React app
+    - name: Build React frontend
+      run: |
+        cd CrimeManagementSystem_frontend
+        npm run build
