@@ -12,9 +12,7 @@ export default function OfficerDashboard() {
   const [closingId, setClosingId] = useState(null)
   const [successMsg, setSuccessMsg] = useState('')
 
-  useEffect(() => {
-    fetchIncidents()
-  }, [])
+  useEffect(() => { fetchIncidents() }, [])
 
   const fetchIncidents = async () => {
     try {
@@ -80,22 +78,27 @@ export default function OfficerDashboard() {
 
       {/* Navbar */}
       <nav className="navbar px-4 py-3" style={{ backgroundColor: '#1a1a2e' }}>
-        <span className="navbar-brand fw-bold text-white">🚔 CMS — Officer Dashboard</span>
+        <span className="navbar-brand fw-bold text-white"
+          style={{ cursor: 'pointer' }}
+          onClick={() => navigate('/')}>
+          🚔 CMS — Officer Dashboard
+        </span>
         <div className="d-flex align-items-center gap-3">
-          <span className="text-white">👮 {name}</span>
+          <span className="text-white">👮 Hello, {name}!</span>
           <button className="btn btn-outline-light btn-sm"
             onClick={() => navigate('/officer/profile')}>Profile</button>
-          <button className="btn btn-danger btn-sm" onClick={handleLogout}>Logout</button>
+          <button className="btn btn-danger btn-sm"
+            onClick={handleLogout}>Logout</button>
         </div>
       </nav>
 
       <div className="container py-4">
 
-{/* Header */}
-<div className="mb-4">
-  <h4 className="fw-bold mb-0">Hello, {name}!</h4>
-  <p className="text-muted mb-0">My Assigned Incidents</p>
-</div>
+        {/* Header */}
+        <div className="mb-4">
+          <h4 className="fw-bold mb-0">Hello, {name}!</h4>
+          <p className="text-muted mb-0">My Assigned Incidents</p>
+        </div>
 
         {/* Stats */}
         <div className="row g-3 mb-4">

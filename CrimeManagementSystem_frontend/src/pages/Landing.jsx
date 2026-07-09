@@ -10,13 +10,14 @@ export default function Landing() {
       <nav className="navbar px-4 py-3 sticky-top" style={{ backgroundColor: '#16213e' }}>
         <div className="navbar-brand d-flex align-items-center fw-bold text-white fs-5">
   <img
-    src="/logo.png"
+    src="/logo1.png"
     alt="CMS Logo"
-    width="300"
-    height="60"
+    width="80"
+    height="50"
     className="me-2"
     style={{ objectFit: "contain" }}
   />
+  Crime Management System
  
 </div>
         <div className="d-flex gap-2 align-items-center">
@@ -241,14 +242,14 @@ export default function Landing() {
   {/* Logo + Title */}
   <div className="d-flex justify-content-center align-items-center mb-2">
     <img
-      src="/logo.png"
+      src="/logo1.png"
       alt="Crime Management System Logo"
-      width="150"
+      width="90"
       height="50"
       className="me-2"
       style={{ objectFit: "contain" }}
     />
-    
+    <span className="fw-bold text-white fs-5">Crime Management System</span>
   </div>
 
   {/* Technology */}

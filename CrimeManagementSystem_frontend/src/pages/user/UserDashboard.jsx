@@ -46,13 +46,19 @@ export default function UserDashboard() {
 
       {/* Navbar */}
       <nav className="navbar px-4 py-3" style={{ backgroundColor: '#1a1a2e' }}>
-        <span className="navbar-brand fw-bold text-white">🚔 CMS — User Dashboard</span>
-        <div className="d-flex align-items-center gap-3">
-          <span className="text-white">👤 {name}</span>
-          <button className="btn btn-outline-light btn-sm"
-            onClick={() => navigate('/user/profile')}>Profile</button>
-          <button className="btn btn-danger btn-sm" onClick={handleLogout}>Logout</button>
-        </div>
+        <span className="navbar-brand fw-bold text-white"
+  style={{ cursor: 'pointer' }}
+  onClick={() => navigate('/')}>
+  🚔 CMS — User Dashboard
+</span>
+<div className="d-flex align-items-center gap-3">
+  <span className="text-white">👤 Hello, {name}!</span>
+  <button className="btn btn-outline-light btn-sm"
+    onClick={() => navigate('/')}>🏠 Home</button>
+  <button className="btn btn-outline-light btn-sm"
+    onClick={() => navigate('/user/profile')}>Profile</button>
+  <button className="btn btn-danger btn-sm" onClick={handleLogout}>Logout</button>
+</div>
       </nav>
 
       <div className="container py-4">

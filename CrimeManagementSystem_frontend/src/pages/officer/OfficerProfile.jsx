@@ -16,9 +16,11 @@ export default function OfficerProfile() {
   const [showCurrentPassword, setShowCurrentPassword] = useState(false)
   const [showNewPassword, setShowNewPassword] = useState(false)
   const [editData, setEditData] = useState({ name: '', phone: '' })
+  const [editErrors, setEditErrors] = useState({})
   const [passwordData, setPasswordData] = useState({
     currentPassword: '', newPassword: ''
   })
+  const [passwordErrors, setPasswordErrors] = useState({})
   const [activeTab, setActiveTab] = useState('profile')
 
   useEffect(() => { fetchProfile() }, [])
@@ -58,9 +60,43 @@ export default function OfficerProfile() {
     }
   }
 
+  const validateEdit = () => {
+    const errors = {}
+    if (!editData.name.trim())
+      errors.name = 'Full name is required'
+    else if (editData.name.trim().length < 2)
+      errors.name = 'Full name must be at least 2 characters'
+    if (!editData.phone.trim())
+      errors.phone = 'Phone number is required'
+    else if (!/^\d{10}$/.test(editData.phone))
+      errors.phone = 'Phone number must be exactly 10 digits'
+    return errors
+  }
+
+  const validatePassword = () => {
+    const errors = {}
+    if (!passwordData.currentPassword)
+      errors.currentPassword = 'Current password is required'
+    if (!passwordData.newPassword)
+      errors.newPassword = 'New password is required'
+    else if (passwordData.newPassword.length < 8)
+      errors.newPassword = 'Password must be at least 8 characters'
+    else if (!/(?=.*[A-Z])/.test(passwordData.newPassword))
+      errors.newPassword = 'Password must contain at least 1 uppercase letter'
+    else if (!/(?=.*[a-z])/.test(passwordData.newPassword))
+      errors.newPassword = 'Password must contain at least 1 lowercase letter'
+    else if (!/(?=.*\d)/.test(passwordData.newPassword))
+      errors.newPassword = 'Password must contain at least 1 number'
+    else if (!/(?=.*[@$!%*?&])/.test(passwordData.newPassword))
+      errors.newPassword = 'Password must contain at least 1 special character (@$!%*?&)'
+    return errors
+  }
+
   const handleUpdateProfile = async (e) => {
     e.preventDefault()
     setError(''); setSuccess('')
+    const errors = validateEdit()
+    if (Object.keys(errors).length > 0) { setEditErrors(errors); return }
     try {
       await API.put('/Auth/profile', editData)
       setSuccess('Profile updated successfully!')
@@ -80,12 +116,25 @@ export default function OfficerProfile() {
   const handleChangePassword = async (e) => {
     e.preventDefault()
     setError(''); setSuccess('')
+    const errors = validatePassword()
+    if (Object.keys(errors).length > 0) { setPasswordErrors(errors); return }
     try {
       await API.put('/Auth/change-password', passwordData)
       setSuccess('Password changed successfully!')
       setPasswordData({ currentPassword: '', newPassword: '' })
+      setPasswordErrors({})
     } catch (err) {
-      setError(err.response?.data?.message || 'Password change failed.')
+      const msg = err.response?.data?.message || ''
+      if (msg.toLowerCase().includes('incorrect') ||
+          msg.toLowerCase().includes('wrong') ||
+          msg.toLowerCase().includes('invalid') ||
+          msg.toLowerCase().includes('current')) {
+        setPasswordErrors({
+          currentPassword: 'Invalid password. Current password does not match.'
+        })
+      } else {
+        setError(msg || 'Password change failed.')
+      }
     }
   }
 
@@ -116,6 +165,7 @@ export default function OfficerProfile() {
         <div className="card border-0 shadow-sm p-4"
           style={{ maxWidth: '600px', margin: '0 auto' }}>
 
+          {/* Profile Header */}
           <div className="text-center mb-4">
             <div className="position-relative d-inline-block mb-3">
               {profilePic ? (
@@ -141,16 +191,17 @@ export default function OfficerProfile() {
             <span className="badge bg-warning text-dark">Officer</span>
           </div>
 
+          {/* Tabs */}
           <ul className="nav nav-tabs mb-4">
             <li className="nav-item">
               <button className={`nav-link ${activeTab === 'profile' ? 'active fw-bold' : ''}`}
-                onClick={() => { setActiveTab('profile'); setError(''); setSuccess('') }}>
+                onClick={() => { setActiveTab('profile'); setError(''); setSuccess(''); setEditErrors({}) }}>
                 Edit Profile
               </button>
             </li>
             <li className="nav-item">
               <button className={`nav-link ${activeTab === 'password' ? 'active fw-bold' : ''}`}
-                onClick={() => { setActiveTab('password'); setError(''); setSuccess('') }}>
+                onClick={() => { setActiveTab('password'); setError(''); setSuccess(''); setPasswordErrors({}) }}>
                 Change Password
               </button>
             </li>
@@ -159,66 +210,123 @@ export default function OfficerProfile() {
           {error && <div className="alert alert-danger py-2">{error}</div>}
           {success && <div className="alert alert-success py-2">{success}</div>}
 
+          {/* Edit Profile Tab */}
           {activeTab === 'profile' && (
-            <form onSubmit={handleUpdateProfile}>
+            <form onSubmit={handleUpdateProfile} noValidate>
               <div className="mb-3">
-                <label className="form-label fw-semibold">Full Name</label>
-                <input type="text" className="form-control"
+                <label className="form-label fw-semibold">
+                  Full Name <span className="text-danger">*</span>
+                </label>
+                <input type="text"
+                  className={`form-control ${editErrors.name ? 'is-invalid' : ''}`}
+                  placeholder="Enter your full name"
                   value={editData.name}
-                  onChange={(e) => setEditData({ ...editData, name: e.target.value })}
-                  required />
+                  onChange={(e) => {
+                    setEditData({ ...editData, name: e.target.value })
+                    setEditErrors({ ...editErrors, name: '' })
+                  }} />
+                {editErrors.name && (
+                  <div className="invalid-feedback">{editErrors.name}</div>
+                )}
               </div>
+
               <div className="mb-3">
-                <label className="form-label fw-semibold">Phone Number</label>
-                <input type="text" className="form-control"
+                <label className="form-label fw-semibold">
+                  Phone Number <span className="text-danger">*</span>
+                </label>
+                <input type="text"
+                  className={`form-control ${editErrors.phone ? 'is-invalid' : ''}`}
+                  placeholder="10 digit phone number"
+                  maxLength={10}
                   value={editData.phone}
-                  onChange={(e) => setEditData({ ...editData, phone: e.target.value })}
-                  required />
+                  onChange={(e) => {
+                    setEditData({ ...editData, phone: e.target.value })
+                    setEditErrors({ ...editErrors, phone: '' })
+                  }} />
+                {editErrors.phone && (
+                  <div className="invalid-feedback">{editErrors.phone}</div>
+                )}
               </div>
+
               <div className="mb-3">
                 <label className="form-label fw-semibold">Email</label>
-                <input type="email" className="form-control" value={profile?.email} disabled />
+                <input type="email" className="form-control"
+                  value={profile?.email} disabled />
                 <small className="text-muted">Email cannot be changed</small>
               </div>
+
               <button type="submit" className="btn fw-bold text-white w-100"
-                style={{ backgroundColor: '#1a1a2e' }}>Update Profile</button>
+                style={{ backgroundColor: '#1a1a2e' }}>
+                Update Profile
+              </button>
             </form>
           )}
 
+          {/* Change Password Tab */}
           {activeTab === 'password' && (
-            <form onSubmit={handleChangePassword}>
+            <form onSubmit={handleChangePassword} noValidate>
               <div className="mb-3">
-                <label className="form-label fw-semibold">Current Password</label>
+                <label className="form-label fw-semibold">
+                  Current Password <span className="text-danger">*</span>
+                </label>
                 <div className="input-group">
-                  <input type={showCurrentPassword ? 'text' : 'password'}
-                    className="form-control" placeholder="Enter current password"
+                  <input
+                    type={showCurrentPassword ? 'text' : 'password'}
+                    className={`form-control ${passwordErrors.currentPassword ? 'is-invalid' : ''}`}
+                    placeholder="Enter current password"
                     value={passwordData.currentPassword}
-                    onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })}
-                    required />
+                    onChange={(e) => {
+                      setPasswordData({ ...passwordData, currentPassword: e.target.value })
+                      setPasswordErrors({ ...passwordErrors, currentPassword: '' })
+                    }} />
                   <button type="button" className="btn btn-outline-secondary"
                     onClick={() => setShowCurrentPassword(!showCurrentPassword)}>
                     {showCurrentPassword ? '🙈' : '👁️'}
                   </button>
+                  {passwordErrors.currentPassword && (
+                    <div className="invalid-feedback d-block">
+                      {passwordErrors.currentPassword}
+                    </div>
+                  )}
                 </div>
               </div>
+
               <div className="mb-3">
-                <label className="form-label fw-semibold">New Password</label>
+                <label className="form-label fw-semibold">
+                  New Password <span className="text-danger">*</span>
+                </label>
                 <div className="input-group">
-                  <input type={showNewPassword ? 'text' : 'password'}
-                    className="form-control" placeholder="Min 8 chars, uppercase, number, special char"
+                  <input
+                    type={showNewPassword ? 'text' : 'password'}
+                    className={`form-control ${passwordErrors.newPassword ? 'is-invalid' : ''}`}
+                    placeholder="Min 8 chars, uppercase, number, special char"
                     value={passwordData.newPassword}
-                    onChange={(e) => setPasswordData({ ...passwordData, newPassword: e.target.value })}
-                    required />
+                    onChange={(e) => {
+                      setPasswordData({ ...passwordData, newPassword: e.target.value })
+                      setPasswordErrors({ ...passwordErrors, newPassword: '' })
+                    }} />
                   <button type="button" className="btn btn-outline-secondary"
                     onClick={() => setShowNewPassword(!showNewPassword)}>
                     {showNewPassword ? '🙈' : '👁️'}
                   </button>
+                  {passwordErrors.newPassword && (
+                    <div className="invalid-feedback d-block">
+                      {passwordErrors.newPassword}
+                    </div>
+                  )}
                 </div>
+                <small className="text-muted">
+                  Must contain uppercase, lowercase, number and special character (@$!%*?&)
+                </small>
               </div>
+
               <button type="submit" className="btn fw-bold text-white w-100"
-                style={{ backgroundColor: '#1a1a2e' }}>Change Password</button>
+                style={{ backgroundColor: '#1a1a2e' }}>
+                Change Password
+              </button>
             </form>
           )}
+
         </div>
       </div>
     </div>

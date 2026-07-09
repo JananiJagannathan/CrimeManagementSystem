@@ -13,16 +13,18 @@ API.interceptors.request.use((config) => {
   return config
 })
 
-// Handle 401 (token expired) → auto logout
+// Handle errors
 API.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
+    // Only logout if server explicitly returns 401
+    // NOT if backend is down (network error = no response)
+    if (error.response && error.response.status === 401) {
       localStorage.removeItem('token')
       localStorage.removeItem('role')
       localStorage.removeItem('userId')
       localStorage.removeItem('name')
-      window.location.href = '/login'
+      window.location.href = '/'  // ← redirect to landing, not login
     }
     return Promise.reject(error)
   }
